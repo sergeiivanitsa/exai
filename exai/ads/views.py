@@ -1,3 +1,12 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 
-# Create your views here.
+
+# Главная страница
+def index(request):
+    template = 'ads/index.html'
+    return render(request, template)
+
+
+def ads_detail(request, pk):
+    return HttpResponse(f'Автомобиль номер {pk}')
